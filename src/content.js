@@ -153,10 +153,10 @@ export const DEVLOG = [
     status: 'RECORDED',
   },
   {
-    revision: 'not yet assigned',
-    date: '—',
+    revision: '75e962a',
+    date: '2026-09-19',
     summary: 'Public shell v0.1: the page you are reading.',
-    evidence: 'Local build only. Awaiting review and authorization.',
-    status: 'PROPOSED',
+    evidence: 'Implementation committed locally after CONTROL PASS. Not yet pushed or deployed.',
+    status: 'RECORDED',
   },
 ]
