@@ -156,7 +156,7 @@ export const DEVLOG = [
     revision: '75e962a',
     date: '2026-09-19',
     summary: 'Public shell v0.1: the page you are reading.',
-    evidence: 'Implementation committed locally after CONTROL PASS. Not yet pushed or deployed.',
+    evidence: 'Implementation commit 75e962a passed CONTROL, was pushed to origin/main, and was deployed via GitHub Pages.',
     status: 'RECORDED',
   },
 ]
