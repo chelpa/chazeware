@@ -1,4 +1,5 @@
 import { Section, StatusTag } from './Section.jsx'
+import { ExternalLink } from './ExternalLink.jsx'
 import { PROJECTS } from '../content.js'
 
 export function Projects() {
@@ -20,7 +21,17 @@ export function Projects() {
             <dl className="facts">
               <div>
                 <dt>Public evidence</dt>
-                <dd>{p.evidence}</dd>
+                <dd>
+                  {p.evidence}
+                  {p.evidenceLink && (
+                    <>
+                      {' '}
+                      <ExternalLink href={p.evidenceLink.href} label={`Repository ${p.evidenceLink.label}`}>
+                        {p.evidenceLink.label}
+                      </ExternalLink>
+                    </>
+                  )}
+                </dd>
               </div>
               <div>
                 <dt>Governed workflow</dt>

@@ -787,7 +787,54 @@ h3 {
   color: var(--muted);
 }
 
+/* ---------- External evidence links ---------- */
+
+.ext {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--muted);
+}
+
+.ext:hover {
+  text-decoration-style: solid;
+}
+
+.ext-mark {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+.ext:hover .ext-mark {
+  color: var(--accent);
+}
+
+.experiment-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 /* ---------- Dev log ---------- */
+
+.log-repo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.log-repo span {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
 .log {
   border-top: 1px solid var(--line);

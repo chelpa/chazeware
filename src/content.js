@@ -3,6 +3,8 @@
 
 export const VERSION = 'v0.1'
 
+export const REPO_URL = 'https://github.com/chelpa/chazeware'
+
 export const NAV = [
   { id: 'what', label: 'What' },
   { id: 'how', label: 'How it works' },
@@ -65,11 +67,12 @@ export const WORKFLOW = [
 
 export const PROJECTS = [
   {
-    name: 'CHAZEWARE Lab',
+    name: 'CHAZEWARE Public Shell',
     status: 'PROTOTYPE',
     summary:
       'This public prototype: a static site that describes the CHAZEWARE approach and tracks its own development.',
     evidence: 'This repository and its revision history.',
+    evidenceLink: { label: 'chelpa/chazeware', href: REPO_URL },
     governed: 'Described here; not yet formalized as software.',
   },
   {
@@ -107,6 +110,7 @@ export const EXPERIMENT = {
     { label: 'Results', value: 'None' },
     { label: 'Participation', value: 'Closed' },
   ],
+  note: 'Development activity recorded elsewhere on this site is not execution of this candidate experiment.',
 }
 
 export const EVIDENCE_CHAIN = [
@@ -123,16 +127,18 @@ export const EVIDENCE_CHAIN = [
 export const MAP = {
   shell: ['This site'],
   work: {
-    projects: ['CHAZEWARE Lab', 'BuscaCursos', 'CEIC USACH', 'EGLON'],
+    projects: ['CHAZEWARE Public Shell', 'BuscaCursos', 'CEIC USACH', 'EGLON'],
     experiments: ['CHZ-DOGFOOD-EXP-001'],
   },
   governance: ['Planning', 'Authority', 'Execution'],
   record: ['Evidence', 'Audit', 'Learning'],
 }
 
+// Each revision links to its commit on GitHub via `sha` (full hash).
 export const DEVLOG = [
   {
     revision: '611607c',
+    sha: '611607c21fc831d7e7300c81b92247f1406fab72',
     date: '2026-09-19',
     summary: 'Initialize public repository.',
     evidence: 'Commit in repository history: README and ignore rules.',
@@ -140,6 +146,7 @@ export const DEVLOG = [
   },
   {
     revision: '7a7b6fe',
+    sha: '7a7b6fe3bf94b538b9120587a38cd4585c55d7c6',
     date: '2026-09-19',
     summary: 'Scaffold public v0.1: minimal React + Vite placeholder page.',
     evidence: 'Commit in repository history: application source and build config.',
@@ -147,6 +154,7 @@ export const DEVLOG = [
   },
   {
     revision: 'ce8ffc5',
+    sha: 'ce8ffc5b6e03cfcc7bfdac7da36cdfeb92e28481',
     date: '2026-09-19',
     summary: 'Add a GitHub Pages deployment workflow.',
     evidence: 'Commit in repository history: workflow definition file.',
@@ -154,9 +162,15 @@ export const DEVLOG = [
   },
   {
     revision: '75e962a',
+    sha: '75e962a9762c8e78af2ece445ccc866e2f9395ed',
     date: '2026-09-19',
-    summary: 'Public shell v0.1: the page you are reading.',
-    evidence: 'Implementation commit 75e962a passed CONTROL, was pushed to origin/main, and was deployed via GitHub Pages.',
+    summary: 'Public shell v0.1 implementation.',
+    evidence:
+      'Implementation revision included in successful GitHub Pages deployment run 35465901154 at deployed revision f3bb386.',
+    evidenceLink: {
+      label: 'Pages deployment run 35465901154',
+      href: 'https://github.com/chelpa/chazeware/actions/runs/35465901154',
+    },
     status: 'RECORDED',
   },
 ]

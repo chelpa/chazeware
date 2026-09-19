@@ -7,8 +7,8 @@ export function History() {
       <div className="prose">
         <p>
           CHAZEWARE has been shaped through work on software projects and
-          experiments. This site is a prototype of how that work can be described
-          in public.
+          research design work. This site is a prototype of how that work can be
+          described in public.
         </p>
         <p>
           It is a prototype. Its descriptions will change as the work does, and

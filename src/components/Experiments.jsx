@@ -25,6 +25,7 @@ export function Experiments() {
             </div>
           ))}
         </dl>
+        <p className="experiment-note">{EXPERIMENT.note}</p>
       </article>
     </Section>
   )
