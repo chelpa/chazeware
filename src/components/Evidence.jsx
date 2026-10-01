@@ -1,13 +1,14 @@
 import { Section, StatusTag } from './Section.jsx'
-import { EVIDENCE_CHAIN } from '../content.js'
+import { ExternalLink } from './ExternalLink.jsx'
+import { CASES, EVIDENCE_CHAIN } from '../content.js'
 
 export function Evidence() {
   return (
     <Section
       id="evidence"
-      index="05"
-      title="Evidence / Case studies"
-      intro="CHAZEWARE keeps seven things distinct. Collapsing any two of them is how a claim ends up treated as a fact."
+      index="06"
+      title="Evidence, provenance & case studies"
+      intro="The public model keeps governance objects distinct and shows where evidence is public, summarized or still internal."
     >
       <ol className="chain">
         {EVIDENCE_CHAIN.map((e, i) => (
@@ -19,24 +20,61 @@ export function Evidence() {
         ))}
       </ol>
 
-      <aside className="callout" aria-label="Audit is not authorization">
-        <h3>Audit is not authorization</h3>
+      <aside className="callout" aria-label="Core separation">
+        <h3>Core separation</h3>
         <p>
-          Review and audit produce information for a decision. They do not
-          approve anything. Only the identified authority can authorize
-          execution.
+          CLAIM ≠ EVIDENCE ≠ FINDING ≠ DECISION ≠ AUTHORITY ≠ EXECUTION ≠ OBSERVATION.
+          A durable record preserves lineage; it does not collapse those categories.
         </p>
       </aside>
 
-      <div className="card card-wide">
-        <header className="card-head">
-          <h3>Case studies</h3>
-          <StatusTag value="COMING SOON" />
-        </header>
-        <p>
-          No case studies are published yet. Each one is intended to state its
-          claim, cite its evidence and name its limits.
-        </p>
+      <div className="grid grid-2">
+        {CASES.map((c) => (
+          <article className="card" key={c.id}>
+            <header className="card-head">
+              <h3>{c.id}</h3>
+              <StatusTag value={c.status} />
+            </header>
+            <dl className="facts">
+              <div>
+                <dt>Claim / question</dt>
+                <dd>{c.claim}</dd>
+              </div>
+              <div>
+                <dt>Evidence status</dt>
+                <dd>
+                  {c.evidence}
+                  {c.href && (
+                    <>
+                      {' '}
+                      <ExternalLink href={c.href} label={c.linkLabel}>
+                        {c.linkLabel}
+                      </ExternalLink>
+                    </>
+                  )}
+                  {c.snapshotLink && (
+                    <>
+                      {' '}
+                      <ExternalLink href={c.snapshotLink.href} label={c.snapshotLink.label}>
+                        {c.snapshotLink.label}
+                      </ExternalLink>
+                    </>
+                  )}
+                </dd>
+              </div>
+              {c.auditBinding && (
+                <div>
+                  <dt>Exact audit binding</dt>
+                  <dd>{c.auditBinding}</dd>
+                </div>
+              )}
+              <div>
+                <dt>Current lesson</dt>
+                <dd>{c.lesson}</dd>
+              </div>
+            </dl>
+          </article>
+        ))}
       </div>
     </Section>
   )

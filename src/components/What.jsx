@@ -1,5 +1,5 @@
 import { Section } from './Section.jsx'
-import { PRINCIPLES, NOT_CLAIMED } from '../content.js'
+import { DEFINITIONS, PRINCIPLES, NOT_CLAIMED } from '../content.js'
 
 export function What() {
   return (
@@ -7,8 +7,18 @@ export function What() {
       id="what"
       index="01"
       title="What is CHAZEWARE"
-      intro="CHAZEWARE is an experimental project on governed human–AI systems. Its public prototype treats each part of a piece of work as a named, visible step instead of an implicit side effect."
+      intro="A public research-and-engineering prototype for governed human–AI work. The architecture is intentionally narrower than an autonomous agent platform."
     >
+      <dl className="grid grid-3 defs">
+        {DEFINITIONS.map((p) => (
+          <div className="cell" key={p.term}>
+            <dt>{p.term}</dt>
+            <dd>{p.text}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h3 className="principles-title">Current design principles</h3>
       <dl className="grid grid-3 defs">
         {PRINCIPLES.map((p) => (
           <div className="cell" key={p.term}>
