@@ -11,11 +11,12 @@ function Chips({ items }) {
   )
 }
 
-function Link({ down, up }) {
+function Link({ down, up, forward, reverse }) {
   return (
     <div className="map-link">
-      <span><span aria-hidden="true">↓ </span>{down}</span>
-      <span><span aria-hidden="true">↑ </span>{up}</span>
+      <span className="sr-only">{forward} {reverse}</span>
+      <span aria-hidden="true">↓ {down}</span>
+      <span aria-hidden="true">↑ {up}</span>
     </div>
   )
 }
@@ -34,7 +35,12 @@ export function SystemMap() {
           <Chips items={MAP.shell} />
         </div>
 
-        <Link down="describes" up="publishes public evidence or labelled summaries" />
+        <Link
+          down="describes"
+          up="publishes public evidence or labelled summaries"
+          forward="Public shell describes Work."
+          reverse="Work publishes public evidence or labelled summaries to the Public shell."
+        />
 
         <div className="tier tier-work">
           <h3 className="tier-label">Work</h3>
@@ -50,21 +56,36 @@ export function SystemMap() {
           </div>
         </div>
 
-        <Link down="is governed by" up="permits / blocks transitions" />
+        <Link
+          down="is governed by"
+          up="permits / blocks transitions"
+          forward="Work is governed by Governance core semantics."
+          reverse="Governance core semantics permits or blocks transitions in Work."
+        />
 
         <div className="tier tier-gov">
           <h3 className="tier-label">Governance core semantics</h3>
           <Chips items={MAP.governance} />
         </div>
 
-        <Link down="produces" up="grounds claims about" />
+        <Link
+          down="produces"
+          up="grounds claims about"
+          forward="Governance core semantics produces Evidence & record."
+          reverse="Evidence & record grounds claims about Governance core semantics."
+        />
 
         <div className="tier tier-record">
           <h3 className="tier-label">Evidence & record</h3>
           <Chips items={MAP.record} />
         </div>
 
-        <Link down="feeds learning when material" up="constrains future change" />
+        <Link
+          down="feeds learning when material"
+          up="constrains future change"
+          forward="Evidence & record feeds learning in Adaptation when material."
+          reverse="Adaptation constrains future change to Evidence & record."
+        />
 
         <div className="tier tier-work">
           <h3 className="tier-label">Adaptation</h3>
