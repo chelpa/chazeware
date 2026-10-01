@@ -1,6 +1,8 @@
 # CHZ-MORPH-001 · Public Shell v0.1 → v0.2
 
-**Status:** CANDIDATE / R1 — independent readjudication required
+**Status:** COMPLETED / PROMOTED
+
+**Closeout:** [CHZ-MORPH-001-CLOSEOUT](CHZ-MORPH-001-CLOSEOUT.md) records the exact source, human promotion decision, merge, successful deployment and human public observation. Sections 2–7 retain the historical candidate/R1 plan and its then-current authority scope; they are not a present pending-promotion status or new authority grant.
 
 **Date:** 2026-10-01
 
@@ -8,7 +10,7 @@
 
 **Baseline revision:** `f2e32a8dead911d992b7aafd7865d15a25cf9cd8`
 
-**Authority:** the human requester authorized R1 repairs and a push only to the candidate branch. Promotion, main changes, merge, deployment and PR closure are outside that scope. This record creates no authority.
+**Historical R1 authority:** the human requester authorized R1 repairs and a push only to the candidate branch. Promotion, main changes, merge, deployment and PR closure were outside that R1 scope. A later explicit human AUTHORITY_DECISION = PROMOTE authorized the recorded promotion. This record creates no authority.
 
 ## 1. Research / engineering question
 
@@ -150,13 +152,13 @@ It must make the following facts inspectable:
 - which claims are public evidence versus internal summaries;
 - that promotion is a distinct act from drafting the candidate.
 
-## 8. Current disposition
+## 8. Current disposition after promotion
 
-`CANDIDATE / R1 — INDEPENDENT READJUDICATION REQUIRED`
+`COMPLETED / PROMOTED`
 
-The candidate should be reviewed before promotion. If promoted, the deployment becomes evidence of the transition; it does not prove the broader CHAZEWARE theory.
+The two historical HOLDs and final exact-subject PASS remain separate records. After the human decision, approved source `d83c7f80c3a6b617d7bc08a98d20eb391b2731c4` was promoted by merge `e3e40f39322e8b9aeae562896a7a923a88828294`. Pages run [36912166784](https://github.com/chelpa/chazeware/actions/runs/36912166784) returned `SUCCESS`; public observation is `CONFIRMED_BY_HUMAN` as reported by the requester. These are distinct objects and observations.
 
-R1 repairs the public presentation and evidence boundaries; it does not validate private packages or promote v0.2. The public shell describes the workflow and does not enforce it. Safety preservation remains an intended design property, not an established guarantee.
+The completed repository/process case supports the narrow proposition “Immutable history. Governed state. Evolvable structure.” It does not prove the broader CHAZEWARE theory or validate private packages. The public shell describes the workflow and does not enforce it. Safety preservation remains an intended design property, not an established guarantee. DOGFOOD remains planned and unexecuted; CHZ-MORPH-001 does not complete or supersede it.
 
 `TRUTH OF A CLAIM ≠ STANDING OF THE ACT THAT PRODUCED IT`
 

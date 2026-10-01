@@ -8,7 +8,7 @@ export function DevLog() {
       id="log"
       index="10"
       title="Public development log"
-      intro="A small static sample of how development can be tracked: each entry pairs a revision with the evidence behind it and a status. Entries are written by hand in this prototype."
+      intro="Selected public milestones, including the CHZ-MORPH-001 candidate, audit, human decision, merge and deployment sequence. This is a curated record, not a list of every Git commit. Audit subjects and promotion events remain distinct."
     >
       <p className="log-repo">
         <span>Repository</span>
@@ -21,8 +21,8 @@ export function DevLog() {
           <li className="log-row" key={e.revision}>
             <div className="log-rev">
               <ExternalLink
-                href={`${REPO_URL}/commit/${e.sha}`}
-                label={`Commit ${e.revision}`}
+                href={e.reference?.href || `${REPO_URL}/commit/${e.sha}`}
+                label={e.reference?.label || `Commit ${e.revision}`}
               >
                 <code>{e.revision}</code>
               </ExternalLink>

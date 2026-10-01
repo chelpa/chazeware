@@ -12,7 +12,7 @@ export function History() {
         </p>
         <p>
           The first public shell is preserved at <code>{BASELINE_SHA.slice(0, 8)}</code>.
-          v0.2 is a new candidate revision that introduces the operational/learning
+          v0.2 is the promoted revision that introduces the operational/learning
           split, explicit CHAZEWARE–CHELPAHAZE–CHZ definitions, research state and
           the morphostasis/morphogenesis distinction.
         </p>
@@ -33,11 +33,12 @@ export function History() {
         <article className="card">
           <header className="card-head">
             <h3>{VERSION}</h3>
-            <StatusTag value="MORPHOGENESIS CANDIDATE" />
+            <StatusTag value="PROMOTED / DEPLOYED" />
           </header>
           <p>
-            A versioned structural change. Promotion should occur only after the
-            candidate is inspected and the delta remains consistent with its stated evidence and limits.
+            A versioned structural change promoted after two historical HOLDs,
+            R1/R2 repairs, exact-subject independent PASS and an explicit human
+            decision. Pages deployment succeeded; the human confirmed v0.2 online.
           </p>
         </article>
       </div>
@@ -49,9 +50,10 @@ export function History() {
           remains in Git. This is not a claim of termination or a rename to CHZ Finance World.
         </p>
         <p>
-          CHZ-DOGFOOD-EXP-001 was retired from the current display as an unexecuted
-          design candidate with no results. CHZ-MORPH-001 is a distinct experiment;
-          replacing the display slot does not complete or validate the earlier design.
+          CHZ-DOGFOOD-EXP-001 remains PLANNED / DESIGN CANDIDATE / NOT EXECUTED.
+          It has not been completed or superseded by CHZ-MORPH-001, which is a
+          distinct experiment. Its original v0.1 definition remains preserved in
+          Git history; it may still be executed later under an explicit protocol.
         </p>
       </aside>
     </Section>
