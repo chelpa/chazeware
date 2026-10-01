@@ -47,13 +47,27 @@ export function Evidence() {
                   {c.href && (
                     <>
                       {' '}
-                      <ExternalLink href={c.href} label={c.id + ' experiment record'}>
-                        experiment record
+                      <ExternalLink href={c.href} label={c.linkLabel}>
+                        {c.linkLabel}
+                      </ExternalLink>
+                    </>
+                  )}
+                  {c.snapshotLink && (
+                    <>
+                      {' '}
+                      <ExternalLink href={c.snapshotLink.href} label={c.snapshotLink.label}>
+                        {c.snapshotLink.label}
                       </ExternalLink>
                     </>
                   )}
                 </dd>
               </div>
+              {c.auditBinding && (
+                <div>
+                  <dt>Exact audit binding</dt>
+                  <dd>{c.auditBinding}</dd>
+                </div>
+              )}
               <div>
                 <dt>Current lesson</dt>
                 <dd>{c.lesson}</dd>

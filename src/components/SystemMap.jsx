@@ -13,9 +13,9 @@ function Chips({ items }) {
 
 function Link({ down, up }) {
   return (
-    <div className="map-link" aria-hidden="true">
-      <span>↓ {down}</span>
-      <span>↑ {up}</span>
+    <div className="map-link">
+      <span><span aria-hidden="true">↓ </span>{down}</span>
+      <span><span aria-hidden="true">↑ </span>{up}</span>
     </div>
   )
 }
@@ -34,7 +34,7 @@ export function SystemMap() {
           <Chips items={MAP.shell} />
         </div>
 
-        <Link down="describes" up="publishes evidence from" />
+        <Link down="describes" up="publishes public evidence or labelled summaries" />
 
         <div className="tier tier-work">
           <h3 className="tier-label">Work</h3>
@@ -71,8 +71,9 @@ export function SystemMap() {
           <Chips items={MAP.adaptation} />
         </div>
 
-        <p className="map-loop" aria-hidden="true">
-          ↺ A promoted revision becomes the next governed regime
+        <p className="map-loop">
+          <span aria-hidden="true">↺ </span>
+          Only if the human authorizes promotion does a candidate become the next governed regime.
         </p>
 
         <figcaption>

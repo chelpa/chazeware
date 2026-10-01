@@ -6,6 +6,9 @@ export const VERSION = 'v0.2 candidate'
 
 export const REPO_URL = 'https://github.com/chelpa/chazeware'
 export const BASELINE_SHA = 'f2e32a8dead911d992b7aafd7865d15a25cf9cd8'
+export const PR_URL = `${REPO_URL}/pull/1`
+// Historical subject only. Current candidate SHAs belong in external audit envelopes.
+export const PRIOR_AUDIT_SHA = 'a3556ea4e55f5054799667e13c9703fe69ce2c71'
 
 export const NAV = [
   { id: 'what', label: 'What' },
@@ -16,6 +19,7 @@ export const NAV = [
   { id: 'evidence', label: 'Evidence' },
   { id: 'research', label: 'Research' },
   { id: 'map', label: 'System map' },
+  { id: 'history', label: 'History' },
   { id: 'log', label: 'Dev log' },
 ]
 
@@ -26,7 +30,7 @@ export const DEFINITIONS = [
   },
   {
     term: 'CHELPAHAZE',
-    text: 'The governance and coordination protocol that determines which state transitions are permitted, blocked, escalated or learned from.',
+    text: 'The proposed governance and coordination protocol for determining which state transitions may be permitted, blocked, escalated or learned from. This shell does not implement those controls.',
   },
   {
     term: 'CHZ',
@@ -41,7 +45,7 @@ export const PRINCIPLES = [
   },
   {
     term: 'Governed state',
-    text: 'Present transitions are checked against scope, evidence, policy and authority.',
+    text: 'The design calls for present transitions to be checked against scope, evidence, policy and authority; this shell does not enforce those checks.',
   },
   {
     term: 'Evolvable structure',
@@ -119,45 +123,45 @@ export const PROJECTS = [
   },
   {
     name: 'CHZ Kernel',
-    status: 'RESEARCH',
+    status: 'RESEARCH / INTERNAL_EVIDENCE_ONLY',
     summary:
       'A minimal experimental governance-kernel line used to test authentication, ledger-derived state, tri-state checks, malformed input handling and mandatory gate paths.',
-    evidence: 'Internal reproducible test/evidence packages; public summary only here.',
-    governed: 'Repair contracts define success before implementation; regression and adversarial tests remain separate.',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Reported internal test/evidence packages; this public summary does not independently verify their reproducibility or results.',
+    governed: 'Reported internal repair design: contracts define success before implementation; regression and adversarial tests are separate.',
   },
   {
     name: 'BuscaCursos',
     status: 'ACTIVE',
     summary:
-      'A USACH course-search and schedule-planning product that has also produced real governance and provenance cases.',
-    evidence: 'Public repository.',
+      'A USACH course-search and schedule-planning product.',
+    evidence: 'PUBLIC_EVIDENCE for the product: public repository. This link does not substantiate internal governance incidents.',
     evidenceLink: { label: 'chelpa/buscacursos-usach', href: 'https://github.com/chelpa/buscacursos-usach' },
-    governed: 'Used as a product and as a source of version, evidence, gate and source-scope lessons.',
+    governed: 'INTERNAL_EVIDENCE_ONLY for reported version, gate, provenance and R1P source-scope cases; full incident evidence is not published here.',
   },
   {
     name: 'CEIC USACH',
     status: 'ACTIVE',
     summary:
       'A public student-facing project in the broader academic ecosystem.',
-    evidence: 'Public repository.',
+    evidence: 'PUBLIC_EVIDENCE for the student-facing project: public repository.',
     evidenceLink: { label: 'chelpa/ceic-usach', href: 'https://github.com/chelpa/ceic-usach' },
-    governed: 'Product scope and shared academic data are kept distinct from governance claims.',
+    governed: 'INTERNAL_EVIDENCE_ONLY for reported governance practice. The intended boundary keeps product scope and shared academic data distinct from governance claims.',
   },
   {
     name: 'Mi Semestre',
-    status: 'RESEARCH',
+    status: 'RESEARCH / INTERNAL_EVIDENCE_ONLY',
     summary:
       'A study and academic-evidence project used to explore structured learning, navigation and provenance.',
-    evidence: 'Working repository is not linked from this public shell.',
-    governed: 'Frozen checkpoints and gated revisions are used during development.',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Working repository and checkpoint evidence are not published from this shell.',
+    governed: 'Reported internal development practice: frozen checkpoints and gated revisions; not independently verified here.',
   },
   {
     name: 'CHZ Finance World',
-    status: 'RESEARCH',
+    status: 'RESEARCH / INTERNAL_EVIDENCE_ONLY',
     summary:
       'An experimental governed simulation/game line that reuses CHAZEWARE distinctions without treating game symbols as authority.',
-    evidence: 'Working repository is not linked from this public shell.',
-    governed: 'Major feature growth is intentionally downstream of stronger upstream academic data and governance work.',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Working repository and research evidence are not published from this shell.',
+    governed: 'Reported internal plan: major feature growth depends on upstream academic data and governance work; this is not an observed delivery result.',
   },
 ]
 
@@ -171,35 +175,37 @@ export const EXPERIMENTS = [
       { label: 'Baseline', value: 'Public shell v0.1 @ f2e32a8' },
       { label: 'Method', value: 'Preserve → observe → revise → verify → promote' },
       { label: 'Invariant', value: 'History is retained; claims remain status-labelled' },
-      { label: 'Current result', value: 'v0.2 candidate created as a separate governed revision' },
+      { label: 'OBSERVATION', value: 'A separate v0.2 candidate artifact was created; creation is not promotion or experiment success.' },
+      { label: 'DECISION', value: 'R1 repairs require a new independent audit before any human promotion decision.' },
     ],
     note: 'This is an engineering/research case, not evidence that morphogenesis is a novel CHAZEWARE invention.',
   },
   {
     id: 'CHZ-HIST-001',
-    status: 'DOCUMENTED CASE',
+    status: 'DOCUMENTED CASE / INTERNAL_EVIDENCE_ONLY',
     question:
       'Can source evidence remain frozen while later interpretation evolves without rewriting the past?',
     facts: [
       { label: 'Pattern', value: 'EXP → HIST → LEARN' },
-      { label: 'Source', value: 'Frozen snapshot' },
+      { label: 'Source', value: 'Reported internal frozen snapshot; not independently inspected by this shell' },
       { label: 'Interpretation', value: 'May evolve in a separate layer' },
       { label: 'Lesson', value: 'Declared provenance ≠ observed provenance' },
     ],
-    note: 'The complete historical package is not yet published from this public shell.',
+    note: 'INTERNAL_EVIDENCE_ONLY. The case and its lesson are reported summaries; the complete historical package is not published here.',
   },
   {
     id: 'CHZ-KERNEL-R1',
-    status: 'ENGINEERING EXPERIMENT',
+    status: 'ENGINEERING EXPERIMENT / INTERNAL_EVIDENCE_ONLY',
     question:
       'Can known governance counterexamples be made unreachable while preserving previously accepted behavior?',
     facts: [
-      { label: 'Control', value: 'Frozen v0.1 specimen' },
-      { label: 'Repair', value: 'New revision, not silent mutation of the specimen' },
-      { label: 'Tests', value: 'Regression + adversarial suites' },
+      { label: 'Control / repair design', value: 'Reported internal design: frozen v0.1 specimen and a separate repair revision' },
+      { label: 'Test design', value: 'Reported regression and adversarial suites; a suite description is not an execution record' },
+      { label: 'Execution', value: 'INTERNAL_EVIDENCE_ONLY; no exact execution subject, revision or run record is published here' },
+      { label: 'Results', value: 'Not independently verified by this public shell; no test-pass or counterexample-elimination verdict is issued here' },
       { label: 'Boundary', value: 'A repaired slice ≠ a complete CHAZEWARE kernel' },
     ],
-    note: 'This line tests concrete controls; it does not establish general scientific superiority.',
+    note: 'INTERNAL_EVIDENCE_ONLY. This summary describes the research line and its test design, not public execution evidence or established superiority.',
   },
 ]
 
@@ -217,24 +223,30 @@ export const EVIDENCE_CHAIN = [
 export const CASES = [
   {
     id: 'CHZ-MORPH-001',
-    status: 'PUBLIC',
+    status: 'PUBLIC SUMMARY / CANDIDATE',
     claim: 'The public shell can change its model while preserving the v0.1 baseline and explaining the delta.',
-    evidence: 'Baseline SHA, candidate branch/PR, repository history and this experiment record.',
+    evidence: 'PR #1 is the evolving review object. The original experiment record is pinned to the previously audited revision; it does not describe later repaired bytes.',
     lesson: 'Evolution should create a new governed revision rather than silently redefining the past.',
-    href: 'https://github.com/chelpa/chazeware/blob/experiment/chz-morph-001-public-v0.2/docs/experiments/CHZ-MORPH-001.md',
+    auditBinding: `The prior HOLD_REPAIR_REQUIRED disposition binds only to ${PRIOR_AUDIT_SHA}. Each exact candidate SHA and audit disposition must be registered in an external audit envelope; R1 requires a new independent audit.`,
+    href: PR_URL,
+    linkLabel: 'PR #1 review object',
+    snapshotLink: {
+      label: 'Original experiment record @ a3556ea4',
+      href: `${REPO_URL}/blob/${PRIOR_AUDIT_SHA}/docs/experiments/CHZ-MORPH-001.md`,
+    },
   },
   {
     id: 'CHZ-HIST-001',
-    status: 'SUMMARY',
+    status: 'SUMMARY / INTERNAL_EVIDENCE_ONLY',
     claim: 'Historical source and evolving interpretation require separate provenance layers.',
-    evidence: 'Frozen historical package exists outside this public shell.',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. A frozen historical package is reported outside this public shell; its provenance and contents are not independently verified here.',
     lesson: 'INTEGRITY ≠ TRUTH; RAW SOURCE ≠ INTERPRETATION.',
   },
   {
     id: 'R1P SOURCE-SCOPE',
-    status: 'SUMMARY',
-    claim: 'A plausible claim can survive only by re-derivation when the act that first produced it loses standing.',
-    evidence: 'Governed BuscaCursos source-scope incident; full evidence not published here.',
+    status: 'SUMMARY / INTERNAL_EVIDENCE_ONLY',
+    claim: 'Under this proposed protocol, a plausible claim requires independent re-derivation if its originating act loses standing; factual truth and permission are separate questions.',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Reported BuscaCursos R1P source-scope incident; full evidence and standing adjudication are not published here.',
     lesson: 'TRUTH OF A CLAIM ≠ STANDING OF THE ACT THAT PRODUCED IT.',
   },
 ]
@@ -245,6 +257,7 @@ export const RESEARCH = [
     status: 'CANDIDATE / FORMALIZATION',
     focus: 'Semantic separation, version-bound work objects, non-coercion and candidate safety properties.',
     gate: 'THEORY_INCOMPLETE',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Topic and gate are reported from unpublished research; no exact paper revision or independent evaluation is published here.',
     limit: 'No CHAZEWARE theorem is claimed as proved here.',
   },
   {
@@ -252,13 +265,15 @@ export const RESEARCH = [
     status: 'CANDIDATE / ALGORITHM SPECIFICATION',
     focus: 'CHZ_VALIDATE-style validation with explicit subject, revision, evidence, blocker and authority checks.',
     gate: 'IMPLEMENTATION_REQUIRED',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Specification and gate are reported from unpublished research; no exact paper revision or independent evaluation is published here.',
     limit: 'Specification and experiments do not yet establish comparative advantage.',
   },
   {
     id: 'Paper 02Q',
     status: 'CANDIDATE / EXPLORATORY',
-    focus: 'Exploratory finite/quantum encodings with a final classical policy verifier retaining authority.',
+    focus: 'Exploratory finite/quantum encodings with a final classical policy verifier checking scoped authorization. The verifier does not manufacture authority.',
     gate: 'QUANTUM_ENCODING_REQUIRED',
+    evidence: 'INTERNAL_EVIDENCE_ONLY. Exploratory topic and gate are reported from unpublished research; no exact paper revision or independent evaluation is published here.',
     limit: 'No CHAZEWARE-specific quantum advantage or theorem is claimed.',
   },
 ]
@@ -304,7 +319,11 @@ export const DEVLOG = [
     sha: '75e962a9762c8e78af2ece445ccc866e2f9395ed',
     date: '2026-09-19',
     summary: 'Build CHAZEWARE public shell v0.1.',
-    evidence: 'Implementation revision recorded in repository history.',
+    evidence: 'Implementation revision included in successful historical Pages deployment run 35465901154 at deployed revision f3bb386; this is v0.1 evidence, not v0.2 deployment.',
+    evidenceLink: {
+      label: 'Historical v0.1 Pages deployment run 35465901154',
+      href: `${REPO_URL}/actions/runs/35465901154`,
+    },
     status: 'RECORDED',
   },
   {

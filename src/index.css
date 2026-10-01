@@ -1,4 +1,4 @@
-/* CHAZEWARE public shell v0.1. Plain CSS, system fonts, no external requests. */
+/* CHAZEWARE public shell v0.2 candidate. Plain CSS and system fonts. */
 
 :root {
   color-scheme: dark;
@@ -138,6 +138,7 @@ h3 {
 .tag {
   display: inline-block;
   flex: none;
+  max-width: 100%;
   padding: 0.15rem 0.5rem;
   border: 1px solid var(--line-strong);
   font-family: var(--mono);
@@ -147,7 +148,8 @@ h3 {
   line-height: 1.5;
   text-transform: uppercase;
   color: var(--muted);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .tag[data-status='prototype'] {
@@ -213,7 +215,7 @@ h3 {
 
 .nav-links {
   display: flex;
-  gap: 1.4rem;
+  gap: 1rem;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -324,9 +326,8 @@ h3 {
   margin-top: 2.5rem;
   font-family: var(--mono);
   font-size: 0.8rem;
-  /* Wide: 6 + 5. Rows are set by column count, not by text width, so the
-     chain never leaves a lone chip on a row. */
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  /* Seven steps fit on one row at desktop widths. */
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .flow li {
@@ -351,7 +352,6 @@ h3 {
 }
 
 /* No arrow at the end of a row (it would fall outside the grid) or after the last step. */
-.flow li:nth-child(6n)::after,
 .flow li:last-child::after {
   content: none;
 }
@@ -360,39 +360,42 @@ h3 {
   border-style: dashed;
 }
 
-/* Medium: 4 + 4 + 3. */
+/* Medium: four steps, then three steps filling the next row. */
 @media (max-width: 68rem) {
   .flow {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .flow li:nth-child(6n)::after {
-    content: '→';
-  }
-
-  .flow li:nth-child(4n)::after {
-    content: none;
-  }
-}
-
-/* Narrow: 2 + 2 + 2 + 2 + 3. A 6-column grid lets the first eight chips span 3
-   and the last three span 2, so the final row is full and no chip is alone. */
-@media (max-width: 44rem) {
-  .flow {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    font-size: 0.75rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .flow li {
     grid-column: span 3;
   }
 
-  .flow li:nth-child(n + 9) {
-    grid-column: span 2;
+  .flow li:nth-child(n + 5) {
+    grid-column: span 4;
   }
 
-  /* Row ends are steps 2, 4, 6 and 8. */
-  .flow li:nth-child(-n + 8):nth-child(2n)::after {
+  .flow li:nth-child(4)::after {
+    content: none;
+  }
+}
+
+/* Narrow: paired steps, followed by a full-width transition. */
+@media (max-width: 44rem) {
+  .flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-size: 0.75rem;
+  }
+
+  .flow li:nth-child(n) {
+    grid-column: auto;
+  }
+
+  .flow li:last-child {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .flow li:nth-child(2n)::after {
     content: none;
   }
 }
@@ -473,6 +476,8 @@ h3 {
 
 .cell,
 .card {
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 1.25rem;
   border: 1px solid var(--line);
   background: var(--bg);
@@ -490,9 +495,30 @@ h3 {
 
 .card-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
+}
+
+.card-head h3 {
+  min-width: 0;
+}
+
+.principles-title {
+  margin-block: 2rem 1rem;
+}
+
+.conditional-branches {
+  margin-top: 1.5rem;
+}
+
+.prose + .grid {
+  margin-top: 1.5rem;
+}
+
+.callout + .grid {
+  margin-top: 1.5rem;
 }
 
 .card-wide {

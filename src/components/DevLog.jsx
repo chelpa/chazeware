@@ -6,7 +6,7 @@ export function DevLog() {
   return (
     <Section
       id="log"
-      index="08"
+      index="10"
       title="Public development log"
       intro="A small static sample of how development can be tracked: each entry pairs a revision with the evidence behind it and a status. Entries are written by hand in this prototype."
     >

@@ -19,8 +19,12 @@ export function Research() {
             <p>{paper.focus}</p>
             <dl className="facts">
               <div>
-                <dt>Current gate</dt>
+                <dt>Reported internal gate</dt>
                 <dd><code>{paper.gate}</code></dd>
+              </div>
+              <div>
+                <dt>Evidence / visibility</dt>
+                <dd>{paper.evidence}</dd>
               </div>
               <div>
                 <dt>Limit</dt>

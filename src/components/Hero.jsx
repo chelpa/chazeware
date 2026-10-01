@@ -12,9 +12,9 @@ export function Hero() {
         <h1 id="hero-title">CHAZEWARE</h1>
         <p className="hero-sub">Immutable history. Governed state. Evolvable structure.</p>
         <p className="hero-lead">
-          CHAZEWARE explores governed human–AI systems that preserve identity by
-          retaining history, preserve safety by governing present transitions,
-          and evolve through explicit versioned changes to future rules.
+          CHAZEWARE explores a design intended to retain identity through history,
+          support safety through governed transitions, and evolve through explicit
+          versioned changes to future rules. These are design aims, not established guarantees.
         </p>
         <p className="hero-notice">
           v0.2 is the first explicit public morphogenesis candidate. The v0.1

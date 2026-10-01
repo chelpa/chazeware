@@ -41,6 +41,19 @@ export function History() {
           </p>
         </article>
       </div>
+
+      <aside className="callout">
+        <h3>Earlier public entries remain historical</h3>
+        <p>
+          EGLON was removed from the current inventory; its v0.1 COMING SOON entry
+          remains in Git. This is not a claim of termination or a rename to CHZ Finance World.
+        </p>
+        <p>
+          CHZ-DOGFOOD-EXP-001 was retired from the current display as an unexecuted
+          design candidate with no results. CHZ-MORPH-001 is a distinct experiment;
+          replacing the display slot does not complete or validate the earlier design.
+        </p>
+      </aside>
     </Section>
   )
 }

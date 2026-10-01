@@ -18,7 +18,7 @@ export function What() {
         ))}
       </dl>
 
-      <h3>Current design principles</h3>
+      <h3 className="principles-title">Current design principles</h3>
       <dl className="grid grid-3 defs">
         {PRINCIPLES.map((p) => (
           <div className="cell" key={p.term}>
