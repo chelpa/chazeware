@@ -1,5 +1,5 @@
 import { Section } from './Section.jsx'
-import { WORKFLOW } from '../content.js'
+import { BRANCHES, WORKFLOW } from '../content.js'
 
 export function How() {
   return (
@@ -7,7 +7,7 @@ export function How() {
       id="how"
       index="02"
       title="How it works"
-      intro="A compact model of the intended workflow. It is a description of how CHAZEWARE frames work, not a software kernel: this prototype does not enforce these steps."
+      intro="The primary operational loop stays small. Adjudication and learning are conditional branches rather than mandatory bureaucracy on every execution."
     >
       <ol className="steps">
         {WORKFLOW.map((s, i) => (
@@ -19,9 +19,20 @@ export function How() {
           </li>
         ))}
       </ol>
+
+      <div className="grid grid-2">
+        {BRANCHES.map((b) => (
+          <article className="card" key={b.path}>
+            <p className="eyebrow">{b.trigger}</p>
+            <h3>{b.path}</h3>
+            <p>{b.text}</p>
+          </article>
+        ))}
+      </div>
+
       <p className="note">
-        “Authority” names who may approve. “Authorize” is the moment they do.
-        They are separate steps on purpose.
+        Evidence can justify a factual finding. It cannot manufacture authority.
+        Agreement can increase confidence; it does not increase permission.
       </p>
     </Section>
   )

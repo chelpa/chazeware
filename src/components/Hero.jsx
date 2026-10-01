@@ -7,29 +7,31 @@ export function Hero() {
       <div className="wrap">
         <p className="hero-meta">
           <span>Public prototype {VERSION}</span>
-          <StatusTag value="PROTOTYPE" />
+          <StatusTag value="CANDIDATE" />
         </p>
         <h1 id="hero-title">CHAZEWARE</h1>
-        <p className="hero-sub">Experimental governed human–AI systems.</p>
+        <p className="hero-sub">Immutable history. Governed state. Evolvable structure.</p>
         <p className="hero-lead">
-          A public prototype exploring systems where planning, authority,
-          execution, evidence, audit and learning remain explicit.
+          CHAZEWARE explores governed human–AI systems that preserve identity by
+          retaining history, preserve safety by governing present transitions,
+          and evolve through explicit versioned changes to future rules.
         </p>
         <p className="hero-notice">
-          This is an early prototype. Nothing here claims scientific
-          validation, autonomous governance, proven superiority or production
-          readiness.
+          v0.2 is the first explicit public morphogenesis candidate. The v0.1
+          baseline remains preserved in Git history; this revision explains what
+          changed, what stayed invariant and why.
         </p>
 
-        <ol className="flow" aria-label="Workflow, in order">
+        <ol className="flow" aria-label="Primary operational loop, in order">
           {WORKFLOW.map((s) => (
             <li key={s.step}>{s.step}</li>
           ))}
         </ol>
 
         <p className="hero-links">
-          <a href="#how">How it works</a>
-          <a href="#log">Development log</a>
+          <a href="#dynamics">Stability & adaptation</a>
+          <a href="#experiments">CHZ-MORPH-001</a>
+          <a href="#research">Research state</a>
         </p>
       </div>
     </section>

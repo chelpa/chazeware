@@ -24,9 +24,9 @@ export function SystemMap() {
   return (
     <Section
       id="map"
-      index="06"
+      index="08"
       title="System map"
-      intro="A conceptual picture of how the parts relate. It is not a live diagram of running software."
+      intro="A conceptual map of the current architecture. It describes relationships and responsibilities; it is not a claim that every element is an independently deployed software service."
     >
       <figure className="map">
         <div className="tier tier-shell">
@@ -34,7 +34,7 @@ export function SystemMap() {
           <Chips items={MAP.shell} />
         </div>
 
-        <Link down="describes" up="published from" />
+        <Link down="describes" up="publishes evidence from" />
 
         <div className="tier tier-work">
           <h3 className="tier-label">Work</h3>
@@ -44,33 +44,40 @@ export function SystemMap() {
               <Chips items={MAP.work.projects} />
             </div>
             <div>
-              <p className="sub-label">Experiment design candidate</p>
+              <p className="sub-label">Experiments / cases</p>
               <Chips items={MAP.work.experiments} />
             </div>
           </div>
         </div>
 
-        <Link down="framed by" up="outcomes return" />
+        <Link down="is governed by" up="permits / blocks transitions" />
 
         <div className="tier tier-gov">
-          <h3 className="tier-label">Governance: kept separate</h3>
+          <h3 className="tier-label">Governance core semantics</h3>
           <Chips items={MAP.governance} />
         </div>
 
-        <Link down="leaves" up="informs" />
+        <Link down="produces" up="grounds claims about" />
 
         <div className="tier tier-record">
-          <h3 className="tier-label">Record</h3>
+          <h3 className="tier-label">Evidence & record</h3>
           <Chips items={MAP.record} />
         </div>
 
+        <Link down="feeds learning when material" up="constrains future change" />
+
+        <div className="tier tier-work">
+          <h3 className="tier-label">Adaptation</h3>
+          <Chips items={MAP.adaptation} />
+        </div>
+
         <p className="map-loop" aria-hidden="true">
-          ↺ Learning feeds the next plan
+          ↺ A promoted revision becomes the next governed regime
         </p>
 
         <figcaption>
-          Conceptual map. Arrows show intended direction of information, not
-          implemented integrations.
+          Conceptual map. Morphostasis and morphogenesis are analytical modes;
+          they are not separate runtime engines.
         </figcaption>
       </figure>
     </Section>
