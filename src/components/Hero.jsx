@@ -7,7 +7,7 @@ export function Hero() {
       <div className="wrap">
         <p className="hero-meta">
           <span>Public prototype {VERSION}</span>
-          <StatusTag value="CANDIDATE" />
+          <StatusTag value="PROMOTED" />
         </p>
         <h1 id="hero-title">CHAZEWARE</h1>
         <p className="hero-sub">Immutable history. Governed state. Evolvable structure.</p>
@@ -17,9 +17,9 @@ export function Hero() {
           versioned changes to future rules. These are design aims, not established guarantees.
         </p>
         <p className="hero-notice">
-          v0.2 is the first explicit public morphogenesis candidate. The v0.1
-          baseline remains preserved in Git history; this revision explains what
-          changed, what stayed invariant and why.
+          v0.2 was promoted by human decision and deployed through CHZ-MORPH-001.
+          The v0.1 baseline and both historical HOLDs remain preserved; this
+          closeout records the transition without rewriting earlier verdicts.
         </p>
 
         <ol className="flow" aria-label="Primary operational loop, in order">

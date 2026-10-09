@@ -1,14 +1,21 @@
 // Static public content for the CHAZEWARE shell.
-// v0.2 is the first explicit public morphogenesis candidate:
+// v0.2 completed the first explicit public morphogenesis experiment:
 // preserve v0.1 history, change the model visibly, record why.
 
-export const VERSION = 'v0.2 candidate'
+export const VERSION = 'v0.2'
 
 export const REPO_URL = 'https://github.com/chelpa/chazeware'
 export const BASELINE_SHA = 'f2e32a8dead911d992b7aafd7865d15a25cf9cd8'
 export const PR_URL = `${REPO_URL}/pull/1`
-// Historical subject only. Current candidate SHAs belong in external audit envelopes.
+// Historical subjects and promotion objects remain distinct.
 export const PRIOR_AUDIT_SHA = 'a3556ea4e55f5054799667e13c9703fe69ce2c71'
+export const R1_SHA = 'c7bb65f8008b5e0b20a905cd6004a3645159ed70'
+export const PROMOTED_SOURCE_SHA = 'd83c7f80c3a6b617d7bc08a98d20eb391b2731c4'
+export const PROMOTION_MERGE_COMMIT = 'e3e40f39322e8b9aeae562896a7a923a88828294'
+export const PAGES_DEPLOYMENT_RUN = '36912166784'
+export const DEPLOYMENT_RESULT = 'SUCCESS'
+export const PUBLIC_OBSERVATION = 'CONFIRMED_BY_HUMAN'
+const PAGES_RUN_URL = `${REPO_URL}/actions/runs/${PAGES_DEPLOYMENT_RUN}`
 
 export const NAV = [
   { id: 'what', label: 'What' },
@@ -116,7 +123,7 @@ export const PROJECTS = [
     name: 'CHAZEWARE Public Shell',
     status: 'PROTOTYPE',
     summary:
-      'The public interface you are reading. v0.2 is being used as the first explicit public morphogenesis case.',
+      'The public interface you are reading. v0.2 was promoted and deployed through the completed CHZ-MORPH-001 repository/process case.',
     evidence: 'Repository history and the CHZ-MORPH-001 experiment record.',
     evidenceLink: { label: 'chelpa/chazeware', href: REPO_URL },
     governed: 'Public changes are versioned; v0.1 remains preserved in Git history.',
@@ -168,17 +175,34 @@ export const PROJECTS = [
 export const EXPERIMENTS = [
   {
     id: 'CHZ-MORPH-001',
-    status: 'CANDIDATE / ACTIVE',
+    status: 'COMPLETED / PROMOTED',
     question:
       'Can CHAZEWARE evolve its own public model without rewriting the model that came before it?',
     facts: [
       { label: 'Baseline', value: 'Public shell v0.1 @ f2e32a8' },
       { label: 'Method', value: 'Preserve → observe → revise → verify → promote' },
       { label: 'Invariant', value: 'History is retained; claims remain status-labelled' },
-      { label: 'OBSERVATION', value: 'A separate v0.2 candidate artifact was created; creation is not promotion or experiment success.' },
-      { label: 'DECISION', value: 'R1 repairs require a new independent audit before any human promotion decision.' },
+      { label: 'Promoted source SHA', value: PROMOTED_SOURCE_SHA },
+      { label: 'Promotion merge commit', value: PROMOTION_MERGE_COMMIT },
+      { label: 'Pages deployment run', value: PAGES_DEPLOYMENT_RUN },
+      { label: 'Deployment result', value: DEPLOYMENT_RESULT },
+      { label: 'Public observation', value: PUBLIC_OBSERVATION },
+      { label: 'Human authority decision', value: 'PROMOTE, after PASS_FOR_HUMAN_PROMOTION_DECISION for the exact R2 subject' },
     ],
-    note: 'This is an engineering/research case, not evidence that morphogenesis is a novel CHAZEWARE invention.',
+    note: 'This completed repository/process case supports the narrow history/state/structure proposition. It does not validate CHAZEWARE as a whole or establish scientific novelty.',
+  },
+  {
+    id: 'CHZ-DOGFOOD-EXP-001',
+    status: 'PLANNED / DESIGN CANDIDATE / NOT EXECUTED',
+    question:
+      'Can a lightweight governed workflow preserve traceability from plan → task → evidence → gate → deployed artifact while CHAZEWARE builds itself?',
+    facts: [
+      { label: 'Protocol', value: 'Not published' },
+      { label: 'Execution', value: 'Not executed' },
+      { label: 'Results', value: 'None; not completed' },
+      { label: 'Future execution', value: 'May be executed later under an explicit protocol' },
+    ],
+    note: 'Not superseded by CHZ-MORPH-001, which is a distinct experiment. The original v0.1 definition remains preserved in Git history. Public development and promotion do not execute this design candidate.',
   },
   {
     id: 'CHZ-HIST-001',
@@ -223,13 +247,13 @@ export const EVIDENCE_CHAIN = [
 export const CASES = [
   {
     id: 'CHZ-MORPH-001',
-    status: 'PUBLIC SUMMARY / CANDIDATE',
+    status: 'PUBLIC SUMMARY / COMPLETED',
     claim: 'The public shell can change its model while preserving the v0.1 baseline and explaining the delta.',
-    evidence: 'PR #1 is the evolving review object. The original experiment record is pinned to the previously audited revision; it does not describe later repaired bytes.',
+    evidence: 'PR #1 is the merged review object. The promoted source, promotion merge and successful Pages run are distinct evidence objects; the public observation was confirmed by the human.',
     lesson: 'Evolution should create a new governed revision rather than silently redefining the past.',
-    auditBinding: `The prior HOLD_REPAIR_REQUIRED disposition binds only to ${PRIOR_AUDIT_SHA}. Each exact candidate SHA and audit disposition must be registered in an external audit envelope; R1 requires a new independent audit.`,
+    auditBinding: `Historical HOLD_REPAIR_REQUIRED dispositions bind separately to ${PRIOR_AUDIT_SHA} and ${R1_SHA}. PASS_FOR_HUMAN_PROMOTION_DECISION binds only to ${PROMOTED_SOURCE_SHA}. Human AUTHORITY_DECISION = PROMOTE is a separate act; merge ${PROMOTION_MERGE_COMMIT} and Pages run ${PAGES_DEPLOYMENT_RUN} do not rewrite those verdicts.`,
     href: PR_URL,
-    linkLabel: 'PR #1 review object',
+    linkLabel: 'PR #1 merged review object',
     snapshotLink: {
       label: 'Original experiment record @ a3556ea4',
       href: `${REPO_URL}/blob/${PRIOR_AUDIT_SHA}/docs/experiments/CHZ-MORPH-001.md`,
@@ -279,7 +303,7 @@ export const RESEARCH = [
 ]
 
 export const MAP = {
-  shell: ['Public shell v0.2 candidate'],
+  shell: ['Public shell v0.2'],
   work: {
     projects: ['Public Shell', 'CHZ Kernel', 'BuscaCursos', 'CEIC USACH', 'Mi Semestre', 'CHZ Finance World'],
     experiments: ['CHZ-MORPH-001', 'CHZ-HIST-001', 'CHZ-KERNEL-R1'],
@@ -349,5 +373,89 @@ export const DEVLOG = [
     summary: 'Address CHZ-009 publication audit findings.',
     evidence: 'This exact commit is the frozen baseline for CHZ-MORPH-001.',
     status: 'V0.1 BASELINE',
+  },
+  {
+    revision: 'a3556ea4',
+    sha: PRIOR_AUDIT_SHA,
+    date: '2026-10-01',
+    summary: 'Create the initial v0.2 candidate for CHZ-MORPH-001.',
+    evidence: 'The versioned candidate and its validation workflow are separate from promotion.',
+    status: 'HISTORICAL CANDIDATE',
+  },
+  {
+    revision: 'HOLD #1',
+    sha: PRIOR_AUDIT_SHA,
+    date: '2026-10-01',
+    reference: { href: `${REPO_URL}/commit/${PRIOR_AUDIT_SHA}`, label: 'Initial subject a3556ea4, not the audit report' },
+    summary: 'Initial exact-subject audit: HOLD_REPAIR_REQUIRED.',
+    evidence: 'Historical external audit bound only to a3556ea4; B1–B5 required repair. The subject link identifies source, not the audit record.',
+    status: 'HISTORICAL HOLD',
+  },
+  {
+    revision: 'R1 · c7bb65f',
+    sha: R1_SHA,
+    date: '2026-10-01',
+    summary: 'Create R1 as a new repair subject.',
+    evidence: 'Repair candidate c7bb65f preserves the initial subject and its HOLD; verification does not grant promotion authority.',
+    status: 'REPAIR R1',
+  },
+  {
+    revision: 'HOLD #2',
+    sha: R1_SHA,
+    date: '2026-10-01',
+    reference: { href: `${REPO_URL}/commit/${R1_SHA}`, label: 'R1 subject c7bb65f, not the readjudication report' },
+    summary: 'R1 independent readjudication: HOLD_REPAIR_REQUIRED.',
+    evidence: 'Historical external readjudication bound only to c7bb65f; B1/B2/B3/B5 passed and B4 directed accessibility still required repair.',
+    status: 'HISTORICAL HOLD',
+  },
+  {
+    revision: 'R2 · d83c7f80',
+    sha: PROMOTED_SOURCE_SHA,
+    date: '2026-10-01',
+    summary: 'Create R2 with explicit directed System Map semantics.',
+    evidence: 'New subject d83c7f80 exposes both directions of all four tier pairs while preserving the historical candidates and HOLDs.',
+    status: 'REPAIR R2',
+  },
+  {
+    revision: 'AUDIT PASS',
+    sha: PROMOTED_SOURCE_SHA,
+    date: '2026-10-01',
+    reference: { href: `${REPO_URL}/commit/${PROMOTED_SOURCE_SHA}`, label: 'Independently readjudicated subject d83c7f80, not the audit report' },
+    summary: 'R2 independent readjudication: PASS_FOR_HUMAN_PROMOTION_DECISION.',
+    evidence: 'External exact-subject record found B1–B5 and the requested gates passed. PASS informed the human decision; it did not authorize promotion.',
+    status: 'AUDIT PASS',
+  },
+  {
+    revision: 'HUMAN PROMOTE',
+    sha: PROMOTION_MERGE_COMMIT,
+    date: '2026-10-01',
+    reference: { href: `${REPO_URL}/commit/${PROMOTION_MERGE_COMMIT}`, label: 'Merge message recording the separate human promotion decision' },
+    summary: 'Human AUTHORITY_DECISION = PROMOTE for approved source d83c7f80.',
+    evidence: 'Human authorization is reported separately from the PASS and recorded in the promotion merge message. Evaluation did not manufacture authority.',
+    status: 'HUMAN DECISION',
+  },
+  {
+    revision: 'e3e40f39',
+    sha: PROMOTION_MERGE_COMMIT,
+    date: '2026-10-01',
+    summary: 'Merge PR #1 and promote the approved v0.2 source.',
+    evidence: 'Merge e3e40f39 has baseline and d83c7f80 parents; its tree matches the approved source. Source SHA and merge SHA identify different objects.',
+    status: 'PROMOTED',
+  },
+  {
+    revision: PAGES_DEPLOYMENT_RUN,
+    date: '2026-10-01',
+    reference: { href: PAGES_RUN_URL, label: `Pages deployment run ${PAGES_DEPLOYMENT_RUN}` },
+    summary: 'Pages deployment SUCCESS for promotion merge e3e40f39.',
+    evidence: 'Run 36912166784 completed successfully against the merge commit. Deployment is an execution/result record, not the source revision or authority decision.',
+    status: 'DEPLOYMENT SUCCESS',
+  },
+  {
+    revision: 'HUMAN OBS.',
+    date: '2026-10-01',
+    reference: { href: PAGES_RUN_URL, label: 'Deployment associated with the separately reported human public observation' },
+    summary: 'Public observation: CONFIRMED_BY_HUMAN.',
+    evidence: 'The human requester reported observing deployed v0.2 online. This observation is separate from the Pages workflow success and does not establish broader safety or scientific validation.',
+    status: 'HUMAN OBSERVATION',
   },
 ]

@@ -1,4 +1,4 @@
-/* CHAZEWARE public shell v0.2 candidate. Plain CSS and system fonts. */
+/* CHAZEWARE public shell v0.2. Plain CSS and system fonts. */
 
 :root {
   color-scheme: dark;
@@ -891,6 +891,11 @@ h3 {
 .log-rev {
   display: grid;
   gap: 0.15rem;
+}
+
+.log-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .log-rev code {

@@ -31,6 +31,12 @@ export function Experiments() {
           </article>
         ))}
       </div>
+      <p className="note">
+        CHZ-DOGFOOD-EXP-001, CHZ-EXP-001-v1, CHZ-EXP-001-v2, CHZ-EXP-002,
+        CHZ-HIST-001 and CHZ-MORPH-001 are distinct experiment lines. Completing
+        CHZ-MORPH-001 does not complete or execute any of the others. This closeout
+        does not execute DOGFOOD, CHZ-EXP-001-v2 or CHZ-EXP-002.
+      </p>
     </Section>
   )
 }
