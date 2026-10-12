@@ -19,7 +19,7 @@ La demo A de DentistApp tiene Mes/Día y requiere agenda semanal con duración, 
 | CHAZEWARE | main `f377ac0db1ec95b44c539dc83cf353ee0d2d7f3a` | Base de este documento; no incorpora `chz-010/presentation` local |
 | Claude | CLI 2.1.296, auth `loggedIn=false` | Disponibilidad instalada, ejecución no acreditada |
 
-La candidata semanal está registrada en `860a5115f111f5723363cda6427e0cde79a17ffb`, [PR #2 draft](https://github.com/chelpa/dentistapp-demo/pull/2). [Manifiesto inmutable](https://github.com/chelpa/dentistapp-demo/blob/860a5115f111f5723363cda6427e0cde79a17ffb/docs/calendar-001/evidence/manifest.json). Fuente histórica del override: transcripción del usuario del 12/oct/2026. Los logs originales de ese intento no se reprodujeron ahora.
+La candidata semanal está registrada en `562514aa46eaddb4987ee7b72447beedabe6da8b`, [PR #2 draft](https://github.com/chelpa/dentistapp-demo/pull/2). [Manifiesto inmutable](https://github.com/chelpa/dentistapp-demo/blob/562514aa46eaddb4987ee7b72447beedabe6da8b/docs/calendar-001/evidence/manifest.json). Fuente histórica del override: transcripción del usuario del 12/oct/2026. Los logs originales de ese intento no se reprodujeron ahora.
 
 ## APODE aplicado
 
@@ -65,15 +65,19 @@ Siguiente experimento para L04: dos clientes intentan reservar el mismo profesio
 
 ## Sobre de resultados observado
 
-- Digest agregado de las fuentes revisadas: `880a254e754397883ab18aab1587dd7fa43c146a9d94d60412e0df2e702baab3`. El manifiesto en el commit anterior lista hashes por archivo y logs. Sus cinco fuentes de UI/lógica coinciden con las registradas por el revisor independiente.
-- Instalación limpia/árbol: PASS; 19 tests UTC y Santiago, tipos y exportación estática: PASS. Registro final con Node 24.14.0/npm 11.19.1; implementador también usó Node 24.19.0 del bundle; revisor repitió tests bajo Node18.14.0 (tests compatibles, build requiere Node más nuevo).
-- Review independiente Codex: [REVIEW_PASS_LIMITED](https://github.com/chelpa/dentistapp-demo/blob/860a5115f111f5723363cda6427e0cde79a17ffb/docs/calendar-001/INDEPENDENT-REVIEW.md). 3.000 combinaciones adversariales y 93.780 pares solapados comprobados. Hallazgo reparado: hora pasada del día actual aceptada al comparar solo fecha.
-- [Navegador](https://github.com/chelpa/dentistapp-demo/blob/860a5115f111f5723363cda6427e0cde79a17ffb/docs/calendar-001/evidence/browser-results.json): 16 comprobaciones; exportación real, fixtures ficticias, recursos/conflictos/cancelación/recarga, Mes/Día, Tab/Enter/Escape y cuatro anchos 320/390/768/1440. No es aceptación clínica ni auditoría exhaustiva de accesibilidad.
+- Digest agregado de las fuentes revisadas: `b15486c7a13e9d90a8d873330f77a00acc8750acf44e0ad42a3a6a71e03cd492`. El manifiesto en el commit anterior lista hashes por archivo y logs. Sus cinco fuentes de UI/lógica coinciden con las registradas por el revisor independiente.
+- Instalación limpia/árbol: PASS; 20 tests UTC y Santiago, tipos y exportación estática: PASS. Registro final con Node 24.14.0/npm 11.19.1; implementador también usó Node 24.19.0 del bundle; revisor repitió tests bajo Node18.14.0 (tests compatibles, build requiere Node más nuevo).
+- Review independiente Codex: [REVIEW_PASS_LIMITED](https://github.com/chelpa/dentistapp-demo/blob/562514aa46eaddb4987ee7b72447beedabe6da8b/docs/calendar-001/INDEPENDENT-REVIEW.md). 3.000 combinaciones adversariales y 93.780 pares solapados comprobados. Hallazgo reparado: hora pasada del día actual aceptada al comparar solo fecha.
+- [Navegador](https://github.com/chelpa/dentistapp-demo/blob/562514aa46eaddb4987ee7b72447beedabe6da8b/docs/calendar-001/evidence/browser-results.json): 16 comprobaciones; exportación real, fixtures ficticias, recursos/conflictos/cancelación/recarga, Mes/Día, Tab/Enter/Escape y cuatro anchos 320/390/768/1440. No es aceptación clínica ni auditoría exhaustiva de accesibilidad.
 - G1/G2 PASS; G3 HOLD (2 alertas actuales Next/PostCSS); G4 PASS_LIMITED; G5/G6 HOLD. Concurrencia local no garantizada. CI remoto de nueva candidata se registra en la entrega, distinto del CI previo.
-- Claude Code no implementó ni revisó; [prompt preparado](https://github.com/chelpa/dentistapp-demo/blob/860a5115f111f5723363cda6427e0cde79a17ffb/docs/calendar-001/CLAUDE-PROMPT.md) para una sesión autenticada.
+- Claude Code no implementó ni revisó; [prompt preparado](https://github.com/chelpa/dentistapp-demo/blob/562514aa46eaddb4987ee7b72447beedabe6da8b/docs/calendar-001/CLAUDE-PROMPT.md) para una sesión autenticada.
 
 ### L08 · Fallo del entorno y recuperación
 
-**CLAIM:** mismo comando equivale a mismo runtime. **EVIDENCE:** primer RADO recibió Node18.14 del entorno elevado y el build rechazó la versión; el [sobre histórico](https://github.com/chelpa/dentistapp-demo/blob/860a5115f111f5723363cda6427e0cde79a17ffb/docs/calendar-001/evidence/initial-node18/manifest.json) conserva el fallo. Reejecución explícita con Node24.14 pasó. **FINDING:** el entorno puede cambiar entre herramientas/sesiones. **DECISION candidata:** registrar rutas/versiones de runtime y exit codes, preservar fallo y recuperación; no reinterpretar un fallo de entorno como bug de app ni ocultarlo bajo el último PASS.
+**CLAIM:** mismo comando equivale a mismo runtime. **EVIDENCE:** primer RADO recibió Node18.14 del entorno elevado y el build rechazó la versión; el [sobre histórico](https://github.com/chelpa/dentistapp-demo/blob/562514aa46eaddb4987ee7b72447beedabe6da8b/docs/calendar-001/evidence/initial-node18/manifest.json) conserva el fallo. Reejecución explícita con Node24.14 pasó. **FINDING:** el entorno puede cambiar entre herramientas/sesiones. **DECISION candidata:** registrar rutas/versiones de runtime y exit codes, preservar fallo y recuperación; no reinterpretar un fallo de entorno como bug de app ni ocultarlo bajo el último PASS.
 
-[Resultados y límites completos](https://github.com/chelpa/dentistapp-demo/blob/860a5115f111f5723363cda6427e0cde79a17ffb/docs/calendar-001/RESULTS.md). Esta documentación es el slice de aprendizaje; no modifica el enforcement de CHAZEWARE ni su sitio.
+[Resultados y límites completos](https://github.com/chelpa/dentistapp-demo/blob/562514aa46eaddb4987ee7b72447beedabe6da8b/docs/calendar-001/RESULTS.md). Esta documentación es el slice de aprendizaje; no modifica el enforcement de CHAZEWARE ni su sitio.
+
+### L09 · Integridad de transporte de evidencia
+
+**CLAIM:** subir texto conserva los bytes de un log. **EVIDENCE:** en el commit inicial 860a5115 la transferencia normalizó tres CR del log de build; la copia remota ya no correspondía al hash del manifiesto local. Commit posterior 562514aa preserva bytes UTF-8 sin normalizar y añade test20, repetido por el revisor. **FINDING:** un resultado de build válido puede quedar mal vinculado si el transporte cambia bytes. **DECISION candidata:** verificar digests después de transportar, preservar el incidente y comprobar logs por Buffer. La prueba detecta corrupción accidental; no autentica la verdad o autoría del manifiesto.
