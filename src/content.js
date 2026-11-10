@@ -1,8 +1,8 @@
 // Static public content for the CHAZEWARE shell.
-// v0.2 is the first explicit public morphogenesis candidate:
+// v0.2 is the first promoted public morphogenesis revision:
 // preserve v0.1 history, change the model visibly, record why.
 
-export const VERSION = 'v0.2 candidate'
+export const VERSION = 'v0.2 public'
 
 export const REPO_URL = 'https://github.com/chelpa/chazeware'
 export const BASELINE_SHA = 'f2e32a8dead911d992b7aafd7865d15a25cf9cd8'
@@ -116,7 +116,7 @@ export const PROJECTS = [
     name: 'CHAZEWARE Public Shell',
     status: 'PROTOTYPE',
     summary:
-      'The public interface you are reading. v0.2 is being used as the first explicit public morphogenesis case.',
+      'The public interface you are reading. v0.2 is the first promoted public morphogenesis revision; deployment is evidence of transition, not proof of the broader model.',
     evidence: 'Repository history and the CHZ-MORPH-001 experiment record.',
     evidenceLink: { label: 'chelpa/chazeware', href: REPO_URL },
     governed: 'Public changes are versioned; v0.1 remains preserved in Git history.',
@@ -168,7 +168,7 @@ export const PROJECTS = [
 export const EXPERIMENTS = [
   {
     id: 'CHZ-MORPH-001',
-    status: 'CANDIDATE / ACTIVE',
+    status: 'PUBLIC / EXPERIMENTAL',
     question:
       'Can CHAZEWARE evolve its own public model without rewriting the model that came before it?',
     facts: [
@@ -176,7 +176,7 @@ export const EXPERIMENTS = [
       { label: 'Method', value: 'Preserve → observe → revise → verify → promote' },
       { label: 'Invariant', value: 'History is retained; claims remain status-labelled' },
       { label: 'OBSERVATION', value: 'A separate v0.2 candidate artifact was created; creation is not promotion or experiment success.' },
-      { label: 'DECISION', value: 'R1 repairs require a new independent audit before any human promotion decision.' },
+      { label: 'DECISION', value: 'PR #1 was later merged and deployed; no independent post-R1 semantic readjudication record is currently published here.' },
     ],
     note: 'This is an engineering/research case, not evidence that morphogenesis is a novel CHAZEWARE invention.',
   },
@@ -223,11 +223,11 @@ export const EVIDENCE_CHAIN = [
 export const CASES = [
   {
     id: 'CHZ-MORPH-001',
-    status: 'PUBLIC SUMMARY / CANDIDATE',
+    status: 'PUBLIC SUMMARY / DEPLOYED',
     claim: 'The public shell can change its model while preserving the v0.1 baseline and explaining the delta.',
     evidence: 'PR #1 is the evolving review object. The original experiment record is pinned to the previously audited revision; it does not describe later repaired bytes.',
     lesson: 'Evolution should create a new governed revision rather than silently redefining the past.',
-    auditBinding: `The prior HOLD_REPAIR_REQUIRED disposition binds only to ${PRIOR_AUDIT_SHA}. Each exact candidate SHA and audit disposition must be registered in an external audit envelope; R1 requires a new independent audit.`,
+    auditBinding: `The prior HOLD_REPAIR_REQUIRED disposition binds only to ${PRIOR_AUDIT_SHA}. PR #1 was subsequently merged and deployed. That transition does not itself establish a post-R1 semantic approval.`,
     href: PR_URL,
     linkLabel: 'PR #1 review object',
     snapshotLink: {
@@ -279,7 +279,7 @@ export const RESEARCH = [
 ]
 
 export const MAP = {
-  shell: ['Public shell v0.2 candidate'],
+  shell: ['Public shell v0.2'],
   work: {
     projects: ['Public Shell', 'CHZ Kernel', 'BuscaCursos', 'CEIC USACH', 'Mi Semestre', 'CHZ Finance World'],
     experiments: ['CHZ-MORPH-001', 'CHZ-HIST-001', 'CHZ-KERNEL-R1'],
