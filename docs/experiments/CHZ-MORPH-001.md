@@ -161,3 +161,39 @@ R1 repairs the public presentation and evidence boundaries; it does not validate
 `TRUTH OF A CLAIM ≠ STANDING OF THE ACT THAT PRODUCED IT`
 
 `BUILD PASS ≠ SEMANTIC PASS ≠ AUTHORITY TO PROMOTE`
+
+
+---
+
+## 9. Post-promotion state reconciliation
+
+**Recorded:** 2026-11-09
+
+This section is append-only and does not rewrite the earlier R1 state above.
+
+### OBSERVATION
+
+- PR #1 was merged into `main`.
+- Merge commit: `e3e40f39322e8b9aeae562896a7a923a88828294`.
+- GitHub Pages deployment run `36912166784` completed successfully on 2026-10-01.
+- PR #3 later repaired the custom-domain asset base.
+- Current deployed main revision: `f377ac0db1ec95b44c539dc83cf353ee0d2d7f3a`.
+- GitHub Pages deployment run `37683331150` completed successfully on 2026-10-07.
+
+### FINDING
+
+The repository state advanced beyond the earlier `CANDIDATE / R1 — INDEPENDENT READJUDICATION REQUIRED` checkpoint.
+
+A merge and successful deployment establish that promotion and publication occurred. They do **not** establish that an independent post-R1 semantic readjudication approved the broader CHAZEWARE model.
+
+### CURRENT DISPOSITION
+
+`PUBLIC / EXPERIMENTAL — PROMOTED AND DEPLOYED`
+
+Known limitation:
+
+`POST_R1_INDEPENDENT_SEMANTIC_READJUDICATION: NOT PUBLISHED IN THIS REPOSITORY`
+
+Therefore:
+
+`DEPLOYED ≠ SEMANTICALLY VALIDATED ≠ PRODUCTION READY`
