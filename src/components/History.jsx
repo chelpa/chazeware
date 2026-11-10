@@ -12,9 +12,9 @@ export function History() {
         </p>
         <p>
           The first public shell is preserved at <code>{BASELINE_SHA.slice(0, 8)}</code>.
-          v0.2 is a new candidate revision that introduces the operational/learning
-          split, explicit CHAZEWARE–CHELPAHAZE–CHZ definitions, research state and
-          the morphostasis/morphogenesis distinction.
+          v0.2 is the current public experimental revision. It introduced the
+          operational/learning split, explicit CHAZEWARE–CHELPAHAZE–CHZ definitions,
+          research state and the morphostasis/morphogenesis distinction.
         </p>
       </div>
 
@@ -33,11 +33,11 @@ export function History() {
         <article className="card">
           <header className="card-head">
             <h3>{VERSION}</h3>
-            <StatusTag value="MORPHOGENESIS CANDIDATE" />
+            <StatusTag value="PUBLIC / EXPERIMENTAL" />
           </header>
           <p>
-            A versioned structural change. Promotion should occur only after the
-            candidate is inspected and the delta remains consistent with its stated evidence and limits.
+            A versioned structural change promoted through PR #1. The repository
+            records deployment; deployment alone does not establish semantic validation or production readiness.
           </p>
         </article>
       </div>
