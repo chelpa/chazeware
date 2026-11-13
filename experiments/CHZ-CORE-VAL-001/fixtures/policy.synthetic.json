@@ -1,0 +1,17 @@
+{
+  "candidate": {
+    "id": "BC-REV-B-FIXTURE",
+    "paths": [
+      "index.html"
+    ],
+    "patch_scope": [
+      "index.html"
+    ]
+  },
+  "allowed_untracked": {
+    "AGENTS.md": "NON_BLOCKING"
+  },
+  "human_actors": [
+    "FCO"
+  ]
+}
