@@ -1,0 +1,31 @@
+{
+  "name": "chz-wa-agent-pilot",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-11-13",
+  "workers_dev": true,
+  "vars": {
+    "OPENAI_MODEL": "gpt-5.4-mini",
+    "GRAPH_API_VERSION": "v27.0"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "chz-wa-agent-db",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+    }
+  ],
+  "queues": {
+    "producers": [
+      { "binding": "JOB_QUEUE", "queue": "chz-wa-agent-jobs" }
+    ],
+    "consumers": [
+      {
+        "queue": "chz-wa-agent-jobs",
+        "max_batch_size": 1,
+        "max_batch_timeout": 2,
+        "max_retries": 5,
+        "max_concurrency": 1
+      }
+    ]
+  }
+}
